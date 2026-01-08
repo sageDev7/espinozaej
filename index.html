@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espinoza Estudio Jurídico Integral | Derecho Civil, Previsional y Mandatarios</title>
+    <meta name="description" content="Estudio Jurídico Integral en Florencio Varela. Especialistas en Derecho Civil, Sucesiones, Previsional, Notarial y Gestoría del Automotor. Atención personalizada.">
+    <meta name="keywords" content="abogados florencio varela, estudio juridico, sucesiones, jubilaciones, pensiones, gestoria automotor, derecho civil, mandatarios">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== VARIABLES ========== */
+        :root {
+            --color-primary: #0d212a;
+            --color-secondary: #c99a22;
+            --color-white: #ffffff;
+            --color-light: #f5f5f5;
+            --color-gray: #7a7a7a;
+            
+            --font-primary: 'Lato', sans-serif;
+            --font-secondary: 'Playfair Display', serif;
+            
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 12px rgba(13, 33, 42, 0.15);
+            --shadow-md: 0 4px 24px rgba(13, 33, 42, 0.2);
+            --shadow-lg: 0 8px 40px rgba(13, 33, 42, 0.3);
+        }
+
+        /* ========== RESET ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--color-primary);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-primary);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========== UTILITIES ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section__label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        .section__title {
+            font-family: var(--font-secondary);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section__description {
+            font-size: 1.05rem;
+            color: var(--color-gray);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .section__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section__header .section__description {
+            margin: 0 auto;
+        }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.2rem 3rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 0;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn--primary {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            box-shadow: 0 4px 20px rgba(201, 154, 34, 0.3);
+        }
+
+        .btn--primary:hover {
+            background-color: #a87d1a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(201, 154, 34, 0.4);
+        }
+
+        .btn--outline {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn--outline:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 1.8rem 0;
+        }
+
+        .header.scrolled {
+            background-color: var(--color-primary);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            position: absolute;
+            left: 0;
+        }
+
+        .header.scrolled .logo-wrapper {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .logo-wrapper img {
+            height: 70px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav__link {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--color-white);
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .nav__link:hover {
+            color: var(--color-secondary);
+        }
+
+        .nav__link--cta {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 0.8rem 2rem;
+            border-radius: 0;
+        }
+
+        .nav__link--cta:hover {
+            background-color: #a87d1a;
+        }
+
+        .nav__toggle,
+        .nav__close {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-white);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--color-primary);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13, 33, 42, 0.92) 0%, rgba(13, 33, 42, 0.88) 100%);
+            z-index: 1;
+        }
+
+        .hero__container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero__image {
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .hero__logo {
+            width: 100%;
+            max-width: 200px;
+            filter: drop-shadow(0 10px 40px rgba(201, 154, 34, 0.3));
+        }
+
+        .hero__content h1 {
+            font-family: var(--font-secondary);
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+        }
+
+        .hero__content h1 span {
+            color: var(--color-secondary);
+        }
+
+        .hero__subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--color-secondary);
+            letter-spacing: 1px;
+        }
+
+        .hero__description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero__buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero__image {
+            display: none;
+        }
+
+        .hero__logo {
+            width: 100%;
+            max-width: 350px;
+            filter: drop-shadow(0 10px 40px rgba(201, 154, 34, 0.3));
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 6rem 0;
+            background-color: var(--color-primary);
+        }
+
+        .services .section__title {
+            color: var(--color-white);
+        }
+
+        .services .section__description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .service-category {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-left: 5px solid var(--color-secondary);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .service-category:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-left-width: 8px;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .service-category__header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(201, 154, 34, 0.3);
+        }
+
+        .service-category__icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--color-secondary) 0%, #a87d1a 100%);
+            color: var(--color-white);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .service-category__title {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            color: var(--color-white);
+            font-weight: 700;
+        }
+
+        .service-category__list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-category__item {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-category__item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-secondary);
+            border-radius: 50%;
+        }
+
+        .service-category__item strong {
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+
+        /* ========== WHY CHOOSE SECTION ========== */
+        .why-choose {
+            padding: 6rem 0;
+            background-color: var(--color-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1600&q=80') center/cover no-repeat fixed;
+            filter: grayscale(100%);
+            z-index: 0;
+        }
+
+        .why-choose::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13, 33, 42, 0.92) 0%, rgba(13, 33, 42, 0.88) 100%);
+            z-index: 1;
+        }
+
+        .why-choose .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-choose .section__title {
+            color: var(--color-white);
+        }
+
+        .why-choose .section__description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .why-choose__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 2px solid rgba(201, 154, 34, 0.3);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-secondary);
+            transform: translateY(-10px);
+        }
+
+        .why-card__icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .why-card__title {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .why-card__description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact {
+            padding: 6rem 0;
+            background-color: var(--color-primary);
+        }
+
+        .contact .section__title {
+            color: var(--color-white);
+        }
+
+        .contact .section__description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact__form {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-left: 5px solid var(--color-secondary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form__group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form__group label {
+            display: block;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form__group input,
+        .form__group select,
+        .form__group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid rgba(201, 154, 34, 0.3);
+            background-color: rgba(13, 33, 42, 0.6);
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 0;
+            color: var(--color-white);
+        }
+
+        .form__group input::placeholder,
+        .form__group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form__group input:focus,
+        .form__group select:focus,
+        .form__group textarea:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            background-color: rgba(13, 33, 42, 0.8);
+        }
+
+        .form__group select {
+            color: var(--color-white);
+        }
+
+        .form__group select option {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .form__submit {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact__info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            border-left: 5px solid var(--color-secondary);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .contact-info-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-info-card__icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info-card__content h4 {
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-card__content p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .contact-info-card__content a {
+            color: var(--color-secondary);
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .contact-info-card__content a:hover {
+            color: #a87d1a;
+        }
+
+        /* ========== MAP SECTION ========== */
+        .map {
+            padding: 0;
+            background-color: var(--color-primary);
+        }
+
+        .map__container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map__container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) invert(92%) contrast(83%);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 0 0;
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer__brand .logo-wrapper {
+            opacity: 1;
+            visibility: visible;
+            position: static;
+            left: auto;
+            margin-right: 0;
+        }
+
+        .footer__brand .logo-wrapper img {
+            height: 90px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer__description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer__social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer__social a {
+            width: 45px;
+            height: 45px;
+            background-color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--color-white);
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer__social a:hover {
+            background-color: #a87d1a;
+            transform: translateY(-3px);
+        }
+
+        .footer__section h4 {
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer__links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer__links a:hover {
+            color: var(--color-secondary);
+            padding-left: 5px;
+        }
+
+        .footer__contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer__contact i {
+            color: var(--color-secondary);
+            margin-top: 0.2rem;
+        }
+
+        .footer__contact a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .footer__contact a:hover {
+            color: var(--color-secondary);
+        }
+
+        .footer__bottom {
+            border-top: 1px solid rgba(201, 154, 34, 0.2);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer__bottom p {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .footer__bottom p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer__bottom a {
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+
+        /* ========== WHATSAPP FLOAT ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 65px;
+            height: 65px;
+            background-color: #25D366;
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media screen and (max-width: 1024px) {
+            .services__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .nav {
+                position: relative;
+            }
+
+            .logo-wrapper {
+                position: static;
+                left: auto;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .header.scrolled .logo-wrapper {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav__toggle {
+                position: absolute;
+                right: 1.5rem;
+            }
+
+            .nav__menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--color-primary);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 5rem;
+                transition: var(--transition);
+            }
+
+            .nav__menu.active {
+                right: 0;
+            }
+
+            .nav__list {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .nav__link {
+                font-size: 1.25rem;
+            }
+
+            .nav__toggle,
+            .nav__close {
+                display: block;
+            }
+
+            .nav__close {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+            }
+
+            .hero {
+                padding: 100px 0 40px;
+                background-attachment: scroll;
+            }
+
+            .hero__image {
+                display: flex;
+                margin-bottom: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .hero__logo {
+                max-width: 180px;
+            }
+
+            .hero__content h1 {
+                font-size: 2.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero__subtitle {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero__description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero__buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 90%;
+                max-width: 400px;
+                justify-content: center;
+            }
+
+            .why-choose {
+                background-attachment: scroll;
+            }
+
+            .why-choose__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact__form,
+            .contact-info-card {
+                text-align: center;
+            }
+
+            .contact-info-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer__grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer__brand {
+                text-align: center;
+            }
+
+            .footer__brand .logo-wrapper {
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer__social {
+                justify-content: center;
+            }
+
+            .footer__links {
+                align-items: center;
+            }
+
+            .footer__contact li {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .section__title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .hero__content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section__title {
+                font-size: 2rem;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.75rem;
+            }
+
+            .contact__form {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-category {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .hero__content h1 {
+                font-size: 2rem;
+            }
+
+            .section__title {
+                font-size: 1.75rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HEADER / NAVBAR -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#inicio" class="logo-wrapper">
+                <img src="./logo.png" alt="Espinoza Estudio Jurídico Integral">
+            </a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="#servicios" class="nav__link">Servicios</a></li>
+                    <li class="nav__item"><a href="#nosotros" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1><span>ESPINOZA</span><br>Estudio Jurídico Integral</h1>
+                <p class="hero__subtitle">Profesionales Mandatarios Matriculados</p>
+                <p class="hero__description">
+                    Trabajamos con varios colaboradores y profesionales, dependiendo de la temática a tratar. 
+                    Atención personalizada y asesoramiento en el momento en Florencio Varela.
+                </p>
+                <div class="hero__buttons">
+                    <a href="https://wa.me/5491150568143?text=Hola%2C%20necesito%20asesoramiento%20legal" class="btn btn--primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar Ahora
+                    </a>
+                    <a href="#servicios" class="btn btn--outline">
+                        Nuestros Servicios
+                    </a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="./logo.png" alt="Espinoza" class="hero__logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label">Servicios</span>
+                <h2 class="section__title">Áreas de Práctica</h2>
+                <p class="section__description">
+                    Asesoramiento integral en diversas ramas del derecho con atención personalizada
+                </p>
+            </div>
+
+            <div class="services__grid">
+                <!-- Derecho Civil -->
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <div class="service-category__icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="service-category__title">Derecho Civil</h3>
+                    </div>
+                    <ul class="service-category__list">
+                        <li class="service-category__item"><strong>Sucesiones:</strong> Tramitación completa de sucesiones y declaratoria de herederos</li>
+                        <li class="service-category__item"><strong>Seguros:</strong> Reclamos ante compañías de seguros</li>
+                        <li class="service-category__item"><strong>Daños y Perjuicios:</strong> Lesiones personales y daños materiales</li>
+                    </ul>
+                </div>
+
+                <!-- Derecho Notarial Registral -->
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <div class="service-category__icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="service-category__title">Derecho Notarial</h3>
+                    </div>
+                    <ul class="service-category__list">
+                        <li class="service-category__item"><strong>Contratos:</strong> Redacción y revisión de contratos</li>
+                        <li class="service-category__item"><strong>Cesión de Derechos:</strong> Documentación legal</li>
+                        <li class="service-category__item"><strong>Autorizaciones de Viaje:</strong> Para menores</li>
+                        <li class="service-category__item"><strong>Protocolización:</strong> De instrumentos privados</li>
+                        <li class="service-category__item"><strong>Actas de Convivencia:</strong> Uniones de hecho</li>
+                        <li class="service-category__item"><strong>Boletos:</strong> De compraventa</li>
+                    </ul>
+                </div>
+
+                <!-- Previsional -->
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <div class="service-category__icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="service-category__title">Previsional</h3>
+                    </div>
+                    <ul class="service-category__list">
+                        <li class="service-category__item"><strong>Jubilaciones Ordinarias:</strong> Asesoramiento anticipado para prevenir situaciones que puedan perjudicar el derecho a jubilarse</li>
+                        <li class="service-category__item"><strong>Pensiones por Fallecimiento:</strong> Pensiones derivadas</li>
+                        <li class="service-category__item"><strong>Pensiones No Contributivas:</strong> Por discapacidad o insuficiencia laboral</li>
+                    </ul>
+                </div>
+
+                <!-- Gestoría del Automotor -->
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <div class="service-category__icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="service-category__title">Gestoría del Automotor</h3>
+                    </div>
+                    <ul class="service-category__list">
+                        <li class="service-category__item"><strong>Antes de comprar:</strong> Consultanos para evitar futuros inconvenientes</li>
+                        <li class="service-category__item"><strong>Denuncias de Venta:</strong> Gestión completa</li>
+                        <li class="service-category__item"><strong>Transferencias:</strong> Trámite de transferencia vehicular</li>
+                        <li class="service-category__item"><strong>Prendas:</strong> Inscripciones y cancelaciones</li>
+                        <li class="service-category__item"><strong>Informes de Dominio:</strong> Estado legal del vehículo</li>
+                        <li class="service-category__item"><strong>Créditos Prendarios:</strong> Asesoramiento integral</li>
+                        <li class="service-category__item">Profesionales mandatarios con matrícula avalada por la Dirección Nacional para actuar en todo el país</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE SECTION -->
+    <section class="why-choose" id="nosotros">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label" style="color: var(--color-secondary); border-color: var(--color-secondary);">Quiénes Somos</span>
+                <h2 class="section__title">¿Por Qué Elegirnos?</h2>
+                <p class="section__description">
+                    Compromiso, profesionalismo y atención personalizada en cada consulta
+                </p>
+            </div>
+
+            <div class="why-choose__grid">
+                <div class="why-card">
+                    <div class="why-card__icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="why-card__title">Atención Personalizada</h3>
+                    <p class="why-card__description">
+                        Asesoramiento en el momento adaptado a tus necesidades específicas y situación particular.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card__icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="why-card__title">Equipo Multidisciplinario</h3>
+                    <p class="why-card__description">
+                        Trabajamos con varios colaboradores y profesionales según la temática a tratar.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card__icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="why-card__title">Mandatarios Matriculados</h3>
+                    <p class="why-card__description">
+                        Profesionales con matrícula avalada por la Dirección Nacional para actuar en todo el país.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label">Contacto</span>
+                <h2 class="section__title">Consultanos</h2>
+                <p class="section__description">
+                    Horario de atención: Lunes a Viernes de 9 a 20 horas en Florencio Varela
+                </p>
+            </div>
+
+            <div class="contact__grid">
+                <div class="contact__form">
+                    <form id="contactForm">
+                        <div class="form__group">
+                            <label for="nombre">Nombre y Apellido *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="area">Área de Consulta *</label>
+                            <select id="area" name="area" required>
+                                <option value="">Seleccione un área</option>
+                                <option value="civil">Derecho Civil</option>
+                                <option value="notarial">Derecho Notarial</option>
+                                <option value="previsional">Previsional</option>
+                                <option value="automotor">Gestoría del Automotor</option>
+                                <option value="otro">Otra Consulta</option>
+                            </select>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="mensaje">Describe tu Situación *</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu consulta..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary form__submit">
+                            Enviar Consulta <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact__info">
+                    <div class="contact-info-card">
+                        <div class="contact-info-card__icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-info-card__content">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/5491150568143">11 5056-8143</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-card__icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-card__content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:yaninavespinoza@hotmail.com">yaninavespinoza@hotmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-card__icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-card__content">
+                            <h4>Ubicación</h4>
+                            <p>Florencio Varela<br>Buenos Aires, Argentina</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-card__icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-card__content">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes<br>9:00 - 20:00 hs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map">
+        <div class="map__container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26344.85891848679!2d-58.27470539999999!3d-34.785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32de9ef2c4f8b%3A0x7a4b6c1aabddb5c6!2sFlorencio%20Varela%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1673000000000!5m2!1ses!2sar&style=feature:all|element:geometry|color:0x242f3e&style=feature:all|element:labels.text.stroke|color:0x242f3e&style=feature:all|element:labels.text.fill|color:0x746855&style=feature:administrative.locality|element:labels.text.fill|color:0xd59563&style=feature:poi|element:labels.text.fill|color:0xd59563&style=feature:poi.park|element:geometry|color:0x263c3f&style=feature:poi.park|element:labels.text.fill|color:0x6b9a76&style=feature:road|element:geometry|color:0x38414e&style=feature:road|element:geometry.stroke|color:0x212a37&style=feature:road|element:labels.text.fill|color:0x9ca5b3&style=feature:road.highway|element:geometry|color:0x746855&style=feature:road.highway|element:geometry.stroke|color:0x1f2835&style=feature:road.highway|element:labels.text.fill|color:0xf3d19c&style=feature:transit|element:geometry|color:0x2f3948&style=feature:transit.station|element:labels.text.fill|color:0xd59563&style=feature:water|element:geometry|color:0x17263c&style=feature:water|element:labels.text.fill|color:0x515c6d&style=feature:water|element:labels.text.stroke|color:0x17263c" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="logo-wrapper">
+                        <img src="./logo.png" alt="Espinoza Estudio Jurídico">
+                    </div>
+                    <p class="footer__description">
+                        Estudio Jurídico Integral especializado en Derecho Civil, Previsional, Notarial 
+                        y Gestoría del Automotor en Florencio Varela, Buenos Aires.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://wa.me/5491150568143" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:yaninavespinoza@hotmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Navegación</h4>
+                    <ul class="footer__links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Servicios</h4>
+                    <ul class="footer__links">
+                        <li><a href="#servicios">Derecho Civil</a></li>
+                        <li><a href="#servicios">Derecho Notarial</a></li>
+                        <li><a href="#servicios">Previsional</a></li>
+                        <li><a href="#servicios">Gestoría Automotor</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Contacto</h4>
+                    <ul class="footer__contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Florencio Varela, Buenos Aires
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/5491150568143">11 5056-8143</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:yaninavespinoza@hotmail.com">yaninavespinoza@hotmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Espinoza Estudio Jurídico Integral. Todos los derechos reservados.</p>
+                <p>Desarrollado por <a href="https://instagram.com/sageeDev" target="_blank">@sageeDev</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/5491150568143?text=Hola%2C%20necesito%20asesoramiento%20legal" class="whatsapp-float" id="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        const whatsappFloat = document.getElementById('whatsapp-float');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                whatsappFloat.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                whatsappFloat.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+            });
+        }
+
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        }
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Redirect to WhatsApp with form data
+            const nombre = encodeURIComponent(data.nombre);
+            const area = encodeURIComponent(data.area);
+            const mensaje = encodeURIComponent(data.mensaje);
+            const telefono = encodeURIComponent(data.telefono);
+            
+            const whatsappMessage = `Hola, mi nombre es ${nombre}. Necesito consultar sobre: ${area}. ${mensaje}. Mi teléfono es: ${telefono}`;
+            const whatsappURL = `https://wa.me/5491150568143?text=${whatsappMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>
